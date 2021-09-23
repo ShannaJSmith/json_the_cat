@@ -8,6 +8,10 @@ request(`${url}${breed}`, (error, response, body) => {
     console.log('ERROR: Breed not found');
     return;
   }
+  if (error) {   //example of an error would be a broken URL
+    console.log('ERROR');
+    return;
+  }
   console.log('error:', error); 
   console.log('statusCode:', response && response.statusCode); 
   const data = JSON.parse(body);
